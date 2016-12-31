@@ -1,0 +1,11 @@
+{{ define "main" }}
+	{{ $.Scratch.Set "posttype" "default" }}
+	{{ if (not (eq .Section "" ) ) }}
+		{{ $.Scratch.Set "posttype" .Section }}
+	{{ end }}
+
+	<main class="wrapper" data-type="{{ $.Scratch.Get "posttype" }}">
+		_default/single.html
+		{{ .Content }}
+	</main>
+{{ end }}

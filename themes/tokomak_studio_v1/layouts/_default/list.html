@@ -1,0 +1,19 @@
+{{ define "main" }}
+	{{ if .IsHome }}
+		<main class="wrapper" data-type="home">
+			_default/list.html
+			<p>This is the Home page</p>
+		</main>
+	{{ end }}
+
+	{{ if not .IsHome }}
+		<div>
+   			<h1 id="title">{{ .Title }}</h1>
+	        <ul id="list">
+	            {{ range .Data.Pages }}
+	                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+	            {{ end }}
+	        </ul>
+  		</div>
+	{{ end }}
+{{ end }}

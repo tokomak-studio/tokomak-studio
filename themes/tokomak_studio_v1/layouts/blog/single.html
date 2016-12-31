@@ -1,0 +1,24 @@
+{{ define "main" }}
+	<main class="wrapper" data-type="blog">
+		<div class="container">
+			<article class="post">
+				<header class="post__header">
+					Published: <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "02·01·2006" }}</time>
+					&nbsp;&nbsp;&nbsp;
+					<span class="readingTime" title="4 min read">Reading Time: {{ div (int .WordCount) 250 }}mins</span>
+					&nbsp;&nbsp;&nbsp;
+
+					<div class="share">
+						Share:
+						<a href="/" class="share__icon share__icon--facebook svg--icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use></svg></a>
+						<a href="/" class="share__icon share__icon--twitter svg--icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use></svg></a>
+						<a href="/" class="share__icon share__icon--linkedin svg--icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-linkedin"></use></svg></a>
+					</div>
+				</header>
+				<section class="post__body">
+					{{ .Content }}
+				</section>
+			</article>
+		</div>
+	</main>
+{{ end }}

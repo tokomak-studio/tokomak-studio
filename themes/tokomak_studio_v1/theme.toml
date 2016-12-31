@@ -1,0 +1,13 @@
+name = "Tokomak Studio v1"
+license = ""
+licenselink = ""
+description = ""
+homepage = "https://tokomak.studio/"
+tags = ["blog"]
+features = ["responsive"]
+min_version = 0.1
+
+[author]
+  name = "Tokomak Studio"
+  homepage = "https://tokomak.studio/"
+
