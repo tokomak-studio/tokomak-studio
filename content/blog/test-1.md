@@ -14,7 +14,7 @@ facebook_image_1400 = "/img/article1_1400.jpg"
 facebook_image_640 = "/img/article1_640.jpg"
 
 twitter_author = "@tokomak_studio"
-twitter_title_70 = "twitter title"
+twitter_title_70 = ""
 twitter_description_200 = "twitter description"
 twitter_image_1400 = "/img/article1_1400.jpg"
 twitter_image_640 = "/img/article1_640.jpg"
