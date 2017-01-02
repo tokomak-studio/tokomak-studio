@@ -30,7 +30,7 @@
 	{{ $.Scratch.Set "fb_image" (printf "%s%s" (trim .Site.BaseURL "/") .Params.facebook_image_1400) }}
 {{ end }}
 
-<meta property="og:locale" content="en_AU" />
+<meta property="og:locale" content="en_US" />
 <meta property="og:type" content="{{ $.Scratch.Get "fb_type" }}" />
 <meta property="og:site_name" content="{{ htmlEscape .Site.Title }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
