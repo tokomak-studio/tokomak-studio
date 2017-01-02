@@ -1,0 +1,39 @@
+{{ $.Scratch.Set "fb_type" "artice" }}
+
+{{ if ( eq .Section "blog" ) }}
+	{{ $.Scratch.Set "fb_type" "article" }}
+{{ end }}
+
+{{ $.Scratch.Set "fb_title" .Title }}
+
+{{ if (not (eq .Params.facebook_title_70 "" ) ) }}
+	{{ $.Scratch.Set "fb_title" (htmlEscape .Params.facebook_title_70) }}
+{{ end }}
+
+{{ $.Scratch.Set "fb_description" .Description }}
+
+{{ if (not (eq .Params.facebook_description_200 "" ) ) }}
+	{{ $.Scratch.Set "fb_description" (htmlEscape .Params.facebook_description_200) }}
+{{ end }}
+
+{{ $.Scratch.Set "fb_image" (printf "%s%s" (trim .Site.BaseURL "/") .Params.featured_image) }}
+
+{{ if (not (eq .Params.facebook_image_640 "" ) ) }}
+	{{ $.Scratch.Set "fb_image" (printf "%s%s" (trim .Site.BaseURL "/") .Params.facebook_image_640) }}
+{{ end }}
+
+{{ if (not (eq .Params.featured_image_1400 "" ) ) }}
+	{{ $.Scratch.Set "fb_image" (printf "%s%s" (trim .Site.BaseURL "/") .Params.featured_image_1400) }}
+{{ end }}
+
+{{ if (not (eq .Params.facebook_image_1400 "" ) ) }}
+	{{ $.Scratch.Set "fb_image" (printf "%s%s" (trim .Site.BaseURL "/") .Params.facebook_image_1400) }}
+{{ end }}
+
+<meta property="og:locale" content="en_AU" />
+<meta property="og:type" content="{{ $.Scratch.Get "fb_type" }}" />
+<meta property="og:site_name" content="{{ htmlEscape .Site.Title }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:image" content="{{ $.Scratch.Get "fb_image" }}" />
+<meta property="og:title" content="{{ $.Scratch.Get "fb_title" }}" />
+<meta property="og:description" content="{{ $.Scratch.Get "fb_description" }}" />

@@ -1,6 +1,7 @@
 title = "Tokomak Studio"
 languageCode = "en-au"
 baseurl = "http://tokomak-studio.github.io/"
+production = true
 
 [taxonomies]
 category = "categories"

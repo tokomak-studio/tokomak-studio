@@ -1,0 +1,34 @@
+{{ $.Scratch.Set "tw_title" .Title }}
+
+{{ if (not (eq .Params.twitter_title_70 "" ) ) }}
+	{{ $.Scratch.Set "tw_title" (htmlEscape .Params.twitter_title_70) }}
+{{ end }}
+
+{{ $.Scratch.Set "tw_description" .Description }}
+
+{{ if (not (eq .Params.twitter_description_200 "" ) ) }}
+	{{ $.Scratch.Set "tw_description" (htmlEscape .Params.twitter_description_200) }}
+{{ end }}
+
+{{ $.Scratch.Set "tw_type" "summary" }}
+{{ $.Scratch.Set "tw_image" (printf "%s%s" (trim .Site.BaseURL "/") .Params.featured_image) }}
+
+{{ if (not (eq .Params.twitter_image_640 "" ) ) }}
+	{{ $.Scratch.Set "tw_image" (printf "%s%s" (trim .Site.BaseURL "/") .Params.twitter_image_640) }}
+{{ end }}
+
+{{ if (not (eq .Params.featured_image_1400 "" ) ) }}
+	{{ $.Scratch.Set "tw_image" (printf "%s%s" (trim .Site.BaseURL "/") .Params.featured_image_1400) }}
+{{ end }}
+
+{{ if (not (eq .Params.twitter_image_1400 "" ) ) }}
+	{{ $.Scratch.Set "tw_type" "summary_large_image" }}
+	{{ $.Scratch.Set "tw_image" (printf "%s%s" (trim .Site.BaseURL "/") .Params.twitter_image_1400) }}
+{{ end }}
+
+<meta name="twitter:card" content="{{ $.Scratch.Get "tw_type" }}" />
+<meta name="twitter:site" content="@tokomak_studio" />
+<meta name="twitter:creator" content="{{ .Params.twitter_author }}" />
+<meta name="twitter:image" content="{{ $.Scratch.Get "tw_image" }}" />
+<meta name="twitter:title" content="{{ $.Scratch.Get "tw_title" }}" />
+<meta name="twitter:description" content="{{ $.Scratch.Get "tw_description" }}" />
